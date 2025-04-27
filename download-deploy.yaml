@@ -30,7 +30,7 @@
     - name: Run the container
       docker_container:
         name: mylab-container
-        image: mylab-image:latest
+        image: sreedocker123/jspmaventomcat
         state: started
         recreate: yes
         published_ports:
