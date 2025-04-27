@@ -1,0 +1,13 @@
+[Unit]
+Description=MyLab Docker Container Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run --name mylab-container -p 8080:8080 mylab-image:latest
+ExecStop=/usr/bin/docker stop mylab-container
+ExecStopPost=/usr/bin/docker rm mylab-container
+
+[Install]
+WantedBy=multi-user.target
